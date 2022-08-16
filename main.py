@@ -205,7 +205,6 @@ function refreshPage(){{
 	
 
 '''
-    # print(f'return link: {returnlink}')
     return (returnlink)
 
 def run():
@@ -241,40 +240,7 @@ while True:
         a, b = i.split(":",1)
         a, b = a.strip('" '), b.strip(' ", \r')
         dic[a] = b
-
-
-
-
-#test run code starts here 
-    pickupbuscurrentcordinates = str(dic.get('pickupbuscurrentlat'))+',' +str(dic.get('pickupbuscurrentlong'))
-    # print('sep pickup  '+ pickupbuscurrentcordinates)
-    
-
-    dropbuscurrentcordinates = str(dic.get('dropbuscurrentlat'))+',' +str(dic.get('dropbuscurrentlong'))
-    # print('sep drop  ' + dropbuscurrentcordinates)
-    
-
-
-
-    dropcordinates = str(dic.get('dropbuslocation'))
-
+        
     coordinates = str(dic.get("pickupbuslocation"))
-
-
-    # print('drop coordinates   ', dropbuscurrentcordinates)
-
-    # print('pickup coordinates    ',coordinates)
-
-#test run code ends here
-    if coordinates == dropcordinates == pickupbuscurrentcordinates == dropbuscurrentcordinates:
-      pass
-    else:
-      with open('test.txt', 'a') as file:
-        file.write(f'{coordinates} , {dropcordinates} ,{pickupbuscurrentcordinates} , {dropbuscurrentcordinates} \n')
-
-
-
-  
     link = f'https://maps.google.com/maps?q={coordinates}'
-    # print(link)
     time.sleep(10)
